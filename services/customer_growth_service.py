@@ -43,17 +43,17 @@ class CustomerGrowthService:
             "Se a tendência atual continuar, o BlueBank atingirá 5.000 clientes em março do próximo ano."
         )        # Gera o resumo
         summary = f"""
-Resumo do Crescimento de Clientes:
-- Total de clientes no período: {total_clients}
-- Crescimento percentual: {growth_percentage:.2f}%
-- Mês com maior crescimento: {biggest_growth_month}
-- Tendência: {trend}
-- Possível causa do crescimento: {causes_growth}
+ Resumo do Crescimento de Clientes:
+ - Total de clientes no período: {total_clients}
+ - Crescimento percentual: {growth_percentage:.2f}%
+ - Mês com maior crescimento: {biggest_growth_month}
+ - Tendência: {trend}
+ - Possível causa do crescimento: {causes_growth}
 
-Insights:
-- Tendência de Crescimento: {tendencia_crescimento}
-- Causa do Crescimento: {causa_crescimento}
-- Previsão Futura: {previsao_futura}
+ Insights:
+ - Tendência de Crescimento: {tendencia_crescimento}
+ - Causa do Crescimento: {causa_crescimento}
+ - Previsão Futura: {previsao_futura}
         """
 
         return {"summary": summary}

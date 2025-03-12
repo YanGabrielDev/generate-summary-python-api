@@ -26,15 +26,15 @@ class DistributionInvestmentsService:
         )
 
         summary = f"""
-Resumo da Distribuição de Investimentos:
-- Total em Renda Fixa: R$ {fixed_income:.2f}
-- Total em Ações: R$ {total_stocks:.2f}
-- Total em Fundos Imobiliários: R$ {total_real_estate_funds:.2f}
-- Investimento mais popular: {popular_investment}
+ Resumo da Distribuição de Investimentos:
+ - Total em Renda Fixa: R$ {fixed_income:.2f}
+ - Total em Ações: R$ {total_stocks:.2f}
+ - Total em Fundos Imobiliários: R$ {total_real_estate_funds:.2f}
+ - Investimento mais popular: {popular_investment}
 
-Insights:
-- Risco x Retorno: {return_risk}
-- Oportunidade de Diversificação: {diversification_opportunity}
-- Tendência: {investment_trend}
+ Insights:
+ - Risco x Retorno: {return_risk}
+ - Oportunidade de Diversificação: {diversification_opportunity}
+ - Tendência: {investment_trend}
         """
         return {"summary": summary}
