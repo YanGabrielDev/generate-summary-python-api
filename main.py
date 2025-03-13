@@ -5,26 +5,35 @@ from controllers.evolution_loans_controller import EvolutionLoansController
 
 app = FastAPI()
 
+@app.get("/")
+async def read_root():
+    return {"message": "Bem-vindo à API de Análise Financeira!"}
+
 @app.get("/customer-growth")
-async def getCustomerGrowth():
+async def get_customer_growth():
     try:
-      data = CustomerGrowthController().list()
-      return data
+        data = CustomerGrowthController().list()
+        return data
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-    
+
 @app.get("/distribution-investments")
-async def getDistributionInvestments():
+async def get_distribution_investments():
     try:
-      data = DistributionInvestmentsController().list()
-      return data
+        data = DistributionInvestmentsController().list()
+        return data
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
 @app.get("/evolution-loans")
-async def getEvolutionLoans():
+async def get_evolution_loans():
     try:
-      data = EvolutionLoansController().list()
-      return data
+        data = EvolutionLoansController().list()  # Corrigido o nome do controller
+        return data
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
