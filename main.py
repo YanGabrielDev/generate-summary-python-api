@@ -5,7 +5,7 @@ from controllers.evolution_loans_controller import EvolutionLoansController
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/", methods=["GET", "HEAD"])
 async def read_root():
     return {"message": "Bem-vindo à API de Análise Financeira!"}
 
