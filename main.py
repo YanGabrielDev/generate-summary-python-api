@@ -2,22 +2,21 @@ from fastapi import FastAPI, HTTPException
 from controllers.customer_growth_controller import CustomerGrowthController
 from controllers.distribution_investments_controller import DistributionInvestmentsController
 from controllers.evolution_loans_controller import EvolutionLoansController
-# from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
-# Configuração dos domínios permitidos:
-# origins = [
-#     "http://localhost:3000",  # Exemplo: frontend local.
-#     "https://example.com",    # Exemplo: domínio externo.
-# ]
+origins = [
+    "http://localhost:3000",  
+    "https://blue-bank-dashboard.vercel.app",    
+]
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins, 
-#     allow_credentials=True, 
-#     allow_methods=["*"],    
-#     allow_headers=["*"],    
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins, 
+    allow_credentials=True, 
+    allow_methods=["*"],    
+    allow_headers=["*"],    
+)
 
 @app.head("/")
 async def read_root():
